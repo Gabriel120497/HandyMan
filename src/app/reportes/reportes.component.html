@@ -1,1 +1,29 @@
-<p>reportes works!</p>
+<ul class="alert alert-danger" *ngIf="errors?.length > 0">
+    <li *ngFor="let err of errors">{{ err }}</li>
+</ul>
+
+<div class="container col-4">
+    <form [formGroup]="reportesForm">
+        <div class="mb-3">
+            <label for="tecnicoId" class="form-label">ID Técnico *</label>
+            <input type="text" class="form-control" id="idTecnico" formControlName="idTecnico" required>
+        </div>
+        <div class="mb-3">
+            <label for="servicioId" class="form-label">ID Servicio *</label>
+            <input type="text" class="form-control" id="idServicio" formControlName="idServicio" required>
+        </div>
+        <div class="mb-3">
+            <label for="fechaHoraInicio" class="col-form-label">Fecha y Hora Inicio *</label>
+            <div>
+                <input class="form-control" type="datetime-local" id="fechaHoraInicio" formControlName="fechaInicio" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="fechaHoraFin" class="col-form-label">Fecha y Hora Fin *</label>
+            <div>
+                <input class="form-control" type="datetime-local" id="fechaHoraFin" formControlName="fechaFin" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="createReport()" [disabled]="!reportesForm.valid">Enviar</button>
+    </form>
+</div>
