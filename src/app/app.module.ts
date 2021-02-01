@@ -9,13 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ReportesService } from './reportes/reportes.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CalcularHorasComponent } from './calcular-horas/calcular-horas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CalcularHorasComponent
   ],
   imports: [
     BrowserModule,

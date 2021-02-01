@@ -33,6 +33,8 @@ export class ReportesComponent implements OnInit {
 
   createReport() {
     this.reporte = this.reportesForm.value;
+    console.log(this.reporte);
+    
     if (this.reporte.fechaInicio < this.reporte.fechaFin) {
       this.reporteService.create(this.reporte).subscribe(
         response => {
