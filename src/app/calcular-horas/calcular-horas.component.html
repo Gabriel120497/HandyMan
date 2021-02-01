@@ -1,0 +1,24 @@
+<div class="container mt-4 col-md-4">
+    <form [formGroup]="formCalculo">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Calculate</h3>
+        <input type="text" class="form-control mb-3" placeholder="idTecnico" formControlName="idTecnico" required>
+        <input type="text" class="form-control mb-3" placeholder="numeroSemana" formControlName="numeroSemana" >
+        <button class="btn btn-primary" [disabled]="formCalculo.invalid" (click)='calcularHoras()'>Calcular</button>
+    </form>
+    <ng-container *ngIf="response===true;">
+        <div class="card text-center text-light bg-dark mt-2">
+            <div class="card-header">
+                <p class="text-white">Reporte de Horas</p>                
+            </div>
+            <div class="card-body text-white">
+                <p>Horas de la semana : {{horas.hSemana}}</p>
+                <p>Horas Normales: {{horas.horaNormal}}</p>
+                <p>Horas Nocturnas: {{horas.horaNoche}}</p>
+                <p>Horas Dominicales: {{horas.horaDomingo}}</p>
+                <p>Horas Extra: {{horas.horaExtraNormal}}</p>
+                <p>Horas Extra Nocturnas: {{horas.horaExtraNoche}}</p>
+                <p>Horas Extra Dominicales: {{horas.horaExtraDomingo}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>
